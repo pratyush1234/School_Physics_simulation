@@ -1,1 +1,22 @@
-determining the displacement of an object under constant acceleration. 
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Function to calculate displacement s
+def displacement_calculation(u, a, t):
+    return u*t+1/2*a*t*t
+
+# Enter the value of acceleration
+init_vel = float(input('enter the value of initial velocity:'))
+acc = float(input('enter the value of acceleration:'))
+t_max = float(input('enter the maximum time of motion:'))
+
+# enter the value of time in range
+time = np.arange(0, t_max, 0.5)
+
+# find the displacement array
+s = displacement_calculation(init_vel, acc, time)
+print("displacement:", s)
+
+# plot the displacement versus time
+plt.scatter(time, s)
+plt.show()
